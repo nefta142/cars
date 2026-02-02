@@ -2,7 +2,8 @@ import "./Footer.css";
 function Footer(){
     <footer>
         <div class="Main-Footer">
-            <p>&copy; 2026</p>
+            <p>&copy; 202e Neftali </p>
+
         </div>
     </footer>
 }
