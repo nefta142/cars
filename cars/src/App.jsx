@@ -1,10 +1,15 @@
-import { useState } from 'react'
-import Footer from './components/Footer'
+import Home from "./pages/Home"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
     <>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/home" element={<Home />}/>
+          <Route path="*" element={<Home />}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
