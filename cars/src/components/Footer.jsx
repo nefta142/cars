@@ -3,31 +3,45 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div id="main-footer">
-        <div className="main-footer-form">
-          <p>
-            En este pequeño formulario puedes dejarnos <br />
-            algunas sugerencias sobre la web
-          </p>
-          <form id="main-footer-form">
-            <input type="text" name="user-name" placeholder="Escribe tu sugerencia" />
-            <button>Enviar</button>
-          </form>
-        </div>
-        <div className="main-footer-apps">
-          <a href="https://github.com/nefta142">
-            <FaGithub />
-          </a>
 
-          <a href="">
-            <FaInstagram />
-          </a>
-        </div>
-        <div class="main-footer-index">
+        <div className="footer-content">
 
+          <div className="main-footer-form">
+            <p>En este pequeño formulario puedes <br/> dejarnos algunas sugerencias sobre la web</p>
+
+            <form className="footer-form">
+              <input
+                type="text"
+                placeholder="Escribe tu sugerencia"
+              />
+              <button>Enviar</button>
+            </form>
+          </div>
+
+          <div className="main-footer-index">
+            <a href="#">Home</a>
+            <a href="#">Cars</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">FAQs</a>
+          </div>
+
+          <div className="main-footer-apps">
+            <a href="https://github.com/nefta142" target="_blank" rel="noreferrer">
+              <FaGithub />
+            </a>
+            <a href="#" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+          </div>
         </div>
-        <h3 className="main-footer-text">&copy; 2026 Neftali</h3>
+
+        <h3 className="main-footer-text">
+          &copy; 2026 Neftali
+        </h3>
+
       </div>
     </footer>
   );
