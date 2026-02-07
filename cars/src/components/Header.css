@@ -1,0 +1,116 @@
+.header {
+    background: #1f1f1f;
+    color: white;
+    width: 100%;
+}
+
+.header-nav {
+    max-width: 68.75rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+}
+.header-logo img {
+    height: 3.5rem;
+    display: block;
+    width: auto;
+}
+
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-link,
+.menu-btn {
+    background: none;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.25rem;
+}
+.menu-link:hover,
+.menu-btn:hover{
+    opacity: 0.85;
+}
+
+.chev {
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+
+.menu-header {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: white;
+    color: #222;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    min-width: 13.75rem;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+
+.menu-header.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.menu-header a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu-header a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 700px) {
+    .header-menu {
+        flex-wrap: wrap;
+    }
+
+    .menu-header {
+        position: static;
+        margin-top: 0.5rem;
+        box-shadow: none;
+    }
+
+}

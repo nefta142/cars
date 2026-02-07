@@ -1,9 +1,56 @@
+import { useState } from "react";
 import "./Header.css";
-function Header(){
-    return(
-        <header>
-            
-        </header>
-    )
+import logo from "../assets/images/logo.png";
+
+function Header() {
+  const [open, setOpen] = useState(false);
+
+  function toggleMenu() {
+    setOpen(!open);
+  }
+
+  return (
+    <header className="header">
+      <nav className="header-nav">
+
+        <a className="header-logo" href="#">
+          <img src={logo} />
+        </a>
+
+        <ul className="header-menu">
+          <li className="menu-item has-submenu">
+            <button className="menu-btn" type="button" onClick={toggleMenu}>
+              Cars <span className="chev">&#9660;</span>
+            </button>
+
+            <div className={`menu-header ${open ? "open" : ""}`}>
+              <p className="menu-title">Cars Guide</p>
+              <a href="#">Ford</a>
+              <a href="#">Toyota</a>
+              <a href="#">Subaru</a>
+              <a href="#">Porsche</a>
+              <a href="#">Mitsubishi</a>
+              <a href="#">Ferrari</a>
+            </div>
+          </li>
+
+          <li className="menu-item">
+            <a className="menu-link" href="#">About</a>
+          </li>
+          <li className="menu-item">
+            <a className="menu-link" href="#">Blog</a>
+          </li>
+          <li className="menu-item">
+            <a className="menu-link" href="#">FAQs</a>
+          </li>
+          <li className="menu-item">
+            <a className="menu-link" href="#">#Trending</a>
+          </li>
+        </ul>
+
+      </nav>
+    </header>
+  );
 }
+
 export default Header;
