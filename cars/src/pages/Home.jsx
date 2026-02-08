@@ -6,7 +6,7 @@ import "./Home.css";
 
 function Home() {
     const fordFeatured = cars.filter(c => c.brand === "Ford").slice(0, 4);
-
+    const toyotaFeatured = cars.filter(c => c.brand === "Toyota").slice(0, 4);
     return (
         <div className="home-layout">
             <Header />
@@ -16,6 +16,11 @@ function Home() {
                     <h2>Ford destacados</h2>
                     <div className="cars-row">
                         {fordFeatured.map(car => (
+                            <CarCard key={car.id} car={car} />
+                        ))}
+                    </div>
+                    <div className="cars-row">
+                        {toyotaFeatured.map(car => (
                             <CarCard key={car.id} car={car} />
                         ))}
                     </div>

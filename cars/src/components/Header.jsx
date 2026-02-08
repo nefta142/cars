@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/images/logo.png";
 
@@ -20,13 +21,13 @@ function Header() {
         <ul className="header-menu">
           <li className="menu-item has-submenu">
             <button className="menu-btn" type="button" onClick={toggleMenu}>
-              Cars <span className="chev">&#9660;</span>
+              Cars <span className="menu-dropdown">&#9660;</span>
             </button>
 
             <div className={`menu-header ${open ? "open" : ""}`}>
               <p className="menu-title">Cars Guide</p>
-              <a href="#">Ford</a>
-              <a href="#">Toyota</a>
+              <Link to="/ford" onClick={()=> setOpen(false)}>Ford</Link>
+              <Link to="/toyota" onCanPlay={()=> setOpen(false)}>Toyota</Link>
               <a href="#">Subaru</a>
               <a href="#">Porsche</a>
               <a href="#">Mitsubishi</a>

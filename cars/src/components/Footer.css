@@ -93,3 +93,54 @@
     margin-top: 2rem auto 0 auto;
     font-size: 0.9rem;
 }
+
+.footer-menu-item {
+    position: relative;
+}
+
+.footer-menu-btn {
+    background: none;
+    border: 0;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.footer-menu {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+
+    background: white;
+    color: #222;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    min-width: 180px;
+
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.footer-menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-menu a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-dropdown {
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+}
