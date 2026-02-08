@@ -12,19 +12,20 @@
     box-sizing: border-box;
     position: relative;
 }
+
 #main-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
 }
 
-#main-footer > * {
-  position: relative;
+#main-footer>* {
+    position: relative;
 }
 
 .footer-content {
-    max-width: 68.75rem;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +36,8 @@
 .main-footer-form {
     max-width: 20rem;
 }
-.main-footer-form p{
+
+.main-footer-form p {
     margin: 0 0 0.75rem 0;
     font-weight: bold;
 }
@@ -86,7 +88,7 @@
 
 
 .main-footer-text {
-    max-width: 68.75rem;
+    max-width: 100%;
     text-align: center;
     margin-top: 2rem auto 0 auto;
     font-size: 0.9rem;
