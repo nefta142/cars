@@ -27,11 +27,11 @@ function Header() {
             <div className={`menu-header ${open ? "open" : ""}`}>
               <p className="menu-title">Cars Guide</p>
               <Link to="/ford" onClick={()=> setOpen(false)}>Ford</Link>
-              <Link to="/toyota" onCanPlay={()=> setOpen(false)}>Toyota</Link>
-              <a href="#">Subaru</a>
-              <a href="#">Porsche</a>
-              <a href="#">Mitsubishi</a>
-              <a href="#">Ferrari</a>
+              <Link to="/toyota" onClick={()=> setOpen(false)}>Toyota</Link>
+              <Link to="/subaru" onClick={()=> setOpen(false)}>Subaru</Link>
+              <Link to="/porsche" onClick={()=> setOpen(false)}>Porsche</Link>
+              <Link to="/mitsubishi" onClick={()=> setOpen(false)}>Mitsubishi</Link>
+              <Link to="/ferrari" onClick={()=> setOpen(false)}>Ferrari</Link>
             </div>
           </li>
 

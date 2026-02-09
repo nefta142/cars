@@ -60,7 +60,7 @@ function Footer() {
           </div>
         </div>
 
-        <h3 className="main-footer-text">&copy; 2026 Neftali</h3>
+        <h3 className="main-footer-text">&copy; 2026 Neftali Política de Privacidad y Cookies | Condiciones de Venta</h3>
       </div>
     </footer>
   );
