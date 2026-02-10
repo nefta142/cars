@@ -14,9 +14,9 @@ function Header() {
     <header className="header">
       <nav className="header-nav">
 
-        <a className="header-logo" href="#">
-          <img src={logo} />
-        </a>
+        
+          <Link to="/home" className="header-logo"><img src={logo} /></Link>
+        
 
         <ul className="header-menu">
           <li className="menu-item has-submenu">

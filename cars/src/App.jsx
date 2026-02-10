@@ -6,6 +6,7 @@ import Mitsubishi from "./pages/Mitsubishi"
 import Ferrari from "./pages/Ferrari"
 import Home from "./pages/Home"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Policy from "./pages/Policy"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/porsche" element={<Porsche />}/>
           <Route path="/mitsubishi" element={<Mitsubishi />}/>
           <Route path="/ferrari" element={<Ferrari />}/>
+          <Route path="/policy" element={<Policy />}/>
           <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>

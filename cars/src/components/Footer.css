@@ -50,12 +50,10 @@
 .footer-form input {
     padding: 0.4rem 0.6rem;
     flex: 1;
-    min-width: 11.25rem;
 }
 
 .footer-form button {
     padding: 0.45rem 0.9rem;
-    cursor: pointer;
 }
 
 .main-footer-index {
@@ -92,6 +90,7 @@
     text-align: center;
     margin-top: 2rem auto 0 auto;
     font-size: 0.9rem;
+    color: white;
 }
 
 .footer-menu-item {
@@ -132,15 +131,18 @@
 
 .footer-menu a {
     color: #222;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.footer-menu a:hover {
-    text-decoration: underline;
 }
 
 .menu-dropdown {
     font-size: 0.7rem;
-    margin-left: 0.25rem;
+}
+
+.footer-text-policy {
+    color: #cfe3ff;
+}
+
+
+
+.footer-text-policy:visited {
+    color: #c9b6ff;
 }
