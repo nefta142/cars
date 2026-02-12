@@ -1,13 +1,15 @@
-import Ford from "./pages/Ford"
-import Toyota from "./pages/Toyota"
-import Subaru from "./pages/Subaru"
-import Porsche from "./pages/Porsche"
-import Mitsubishi from "./pages/Mitsubishi"
-import Ferrari from "./pages/Ferrari"
-import Home from "./pages/Home"
+import Home from "./pages/home/Home"
+import About from "./pages/about/About"
+import Policy from "./pages/policy/Policy"
+import Ferrari from "./pages/ferrari/Ferrari"
+import Mitsubishi from "./pages/mitsubishi/Mitsubishi"
+import Porsche from "./pages/porsche/Porsche"
+import Subaru from "./pages/subaru/Subaru"
+import Toyota from "./pages/toyota/Toyota"
+import Ford from "./pages/ford/Ford"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Policy from "./pages/Policy"
-import About from "./pages/About"
+
+
 
 function App() {
   return (

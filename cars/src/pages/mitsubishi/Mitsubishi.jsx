@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CarCard from "../components/CarCard";
-import { cars } from "../data/cars";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import CarCard from "../../components/car-card/CarCard";
+import { cars } from "../../data/cars";
 
 function Mitsubishi(){
     const mitsubishiCars = cars.filter(c=> c.brand === "Mitsubishi");
