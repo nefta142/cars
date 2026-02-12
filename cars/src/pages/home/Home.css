@@ -1,31 +1,20 @@
-.home-layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 .home-section {
     padding: 2rem 1rem;
 }
-
 
 .cars-row {
     display: flex;
     gap: 1.25rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
 }
 
 .cars-row::-webkit-scrollbar {
-    height: 10px;
+    height: 1.5rem;
 }
 
 .cars-row::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 

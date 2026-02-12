@@ -4,7 +4,7 @@
 }
 
 .about-content {
-    max-width: 100%rem;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2.5rem 1rem;
     flex: 1;
@@ -51,7 +51,6 @@
 
 .about-section a:hover {
     text-decoration: underline;
-    opacity: 0.9;
 }
 
 
