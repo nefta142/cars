@@ -7,6 +7,7 @@ import Ferrari from "./pages/Ferrari"
 import Home from "./pages/Home"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Policy from "./pages/Policy"
+import About from "./pages/About"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/mitsubishi" element={<Mitsubishi />}/>
           <Route path="/ferrari" element={<Ferrari />}/>
           <Route path="/policy" element={<Policy />}/>
+          <Route path="/about" element={<About />}/>
           <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>

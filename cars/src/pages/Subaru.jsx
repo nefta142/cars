@@ -7,10 +7,10 @@ function Subaru(){
     const subaruCars = cars.filter(c => c.brand === "Subaru");
 
     return (
-        <div className="home-layout">
+        <div className="subaru-layout">
             <Header />
 
-            <main className="home-content">
+            <main className="sunbaru-content">
                 <h2>Subaru</h2>
                 <div className="grid">
                     {subaruCars.map(car => (

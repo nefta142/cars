@@ -6,10 +6,10 @@ import { cars } from "../data/cars";
 function Porsche(){
     const porshceCars = cars.filter(c=> c.brand ==="Porsche");
     return(
-        <div className="home-layout">
+        <div className="porsche-layout">
             <Header />
 
-            <main className="home-content">
+            <main className="porsche-content">
                 <h2>Porsche</h2>
                 <div className="grid">
                     {porshceCars.map(car => (

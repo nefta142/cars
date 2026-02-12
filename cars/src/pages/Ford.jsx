@@ -7,10 +7,10 @@ function Ford() {
     const fordCars = cars.filter(c => c.brand === "Ford");
 
     return (
-        <div className="home-layout">
+        <div className="ford-layout">
             <Header />
 
-            <main className="home-content">
+            <main className="ford-content">
                 <h2>Ford</h2>
                 <div className="grid">
                     {fordCars.map(car => (

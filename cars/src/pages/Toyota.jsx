@@ -7,10 +7,10 @@ function Toyota() {
     const toyotaCars = cars.filter(c => c.brand === "Toyota");
 
     return (
-        <div className="home-layout">
+        <div className="toyota-layout">
             <Header />
 
-            <main className="home-content">
+            <main className="toyota-content">
                 <h2>Toyota</h2>
                 <div className="grid">
                     {toyotaCars.map(car => (

@@ -7,10 +7,10 @@ function Mitsubishi(){
     const mitsubishiCars = cars.filter(c=> c.brand === "Mitsubishi");
 
     return(
-            <div className="home-layout">
+            <div className="mitsubishi-layout">
                 <Header />
 
-                <main className="home-content">
+                <main className="mitsubishi-content">
                     <h2>Mitsubishi</h2>
                     <div className="grid">
                         {mitsubishiCars.map(car => (

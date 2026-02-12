@@ -36,7 +36,7 @@ function Header() {
           </li>
 
           <li className="menu-item">
-            <a className="menu-link" href="#">About</a>
+            <Link to="/about" onClick={() => setOpenFooter(false)} className="menu-link">About</Link>
           </li>
           <li className="menu-item">
             <a className="menu-link" href="#">Blog</a>
