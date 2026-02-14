@@ -1,0 +1,33 @@
+.ford-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ford-content {
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+.ford-head {
+    margin-bottom: 1.25rem;
+}
+
+.ford-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.ford-subtitle {
+    margin: 0.35rem 0 0 0;
+    color: #555;
+}
+
+.ford-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
