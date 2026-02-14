@@ -1,59 +1,53 @@
+import { useRef } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import CarCard from "../../components/car-card/CarCard";
 import { cars } from "../../data/cars";
 import "./Home.css";
 
+function CarRow({ title, items }) {
+    const rowRef = useRef(null);
+
+    const scroll = (dir) => {
+        if (!rowRef.current) return;
+        const amount = 420;
+        rowRef.current.scrollBy({ left: dir * amount, behavior: "smooth" });
+    };
+
+    return (
+        <section className="home-section">
+            <div className="row-head">
+                <h2>{title}</h2>
+
+                <div className="row-controls">
+                    <button className="row-btn" type="button"onClick={() => scroll(-1)}aria-label={`Scroll ${title} left`}>‹</button>
+                    <button className="row-btn" type="button" onClick={() => scroll(1)} aria-label={`Scroll ${title} right`}>›</button>
+                </div>
+            </div>
+
+            <div className="cars-row" ref={rowRef}>
+                {items.map((car) => (
+                    <CarCard key={car.id} car={car} />
+                ))}
+            </div>
+        </section>
+    );
+}
+
 function Home() {
-    const fordFeatured = cars.filter(c => c.brand === "Ford").slice(0, 4);
-    const toyotaFeatured = cars.filter(c => c.brand === "Toyota").slice(0, 4);
-    const subaruFeatured = cars.filter(c=> c.brand === "Subaru").slice(0,4);
-    const porscheFeatured = cars.filter(c=> c.brand === "Porsche").slice(0,4);
-    const mitsubishiFeatured = cars.filter(c=> c.brand === "Mitsubishi").slice(0,4);
-    const ferrariFeatured = cars.filter(c=> c.brand === "Ferrari").slice(0,4);
+    const featured = (brand) => cars.filter((c) => c.brand === brand).slice(0, 4);
+
     return (
         <div className="home-layout">
             <Header />
 
             <main className="home-content">
-                <section className="home-section">
-                    <h2>Ford destacados</h2>
-                    <div className="cars-row">
-                        {fordFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                    <h2>Toyota destacados</h2>
-                    <div className="cars-row">
-                        {toyotaFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                    <h2>Subaru destacados</h2>
-                    <div className="cars-row">
-                        {subaruFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                    <h2>Porsche destacados</h2>
-                    <div className="cars-row">
-                        {porscheFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                    <h2>Mitsubishi destacados</h2>
-                    <div className="cars-row">
-                        {mitsubishiFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                    <h2>Ferrari destacados</h2>
-                    <div className="cars-row">
-                        {ferrariFeatured.map(car => (
-                            <CarCard key={car.id} car={car} />
-                        ))}
-                    </div>
-                </section>
+                <CarRow title="Ford destacados" items={featured("Ford")} />
+                <CarRow title="Toyota destacados" items={featured("Toyota")} />
+                <CarRow title="Subaru destacados" items={featured("Subaru")} />
+                <CarRow title="Porsche destacados" items={featured("Porsche")} />
+                <CarRow title="Mitsubishi destacados" items={featured("Mitsubishi")} />
+                <CarRow title="Ferrari destacados" items={featured("Ferrari")} />
             </main>
 
             <Footer />

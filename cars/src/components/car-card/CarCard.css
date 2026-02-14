@@ -49,10 +49,3 @@
     height: 100%;
     object-fit: contain;
 }
-
-@media (max-width: 480px) {
-    .car-card.row {
-        min-width: 300px;
-        height: 420px;
-    }
-}

@@ -2,22 +2,69 @@
     padding: 2rem 1rem;
 }
 
+.row-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.row-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.row-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.row-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
 .cars-row {
     display: flex;
     gap: 1.25rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.cars-row>* {
+    scroll-snap-align: start;
 }
 
 .cars-row::-webkit-scrollbar {
-    height: 1.5rem;
+    height: 0;
+}
+
+.cars-row {
+    scrollbar-width: none;
 }
 
 .cars-row::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.4);
+    background: transparent;
 }
-
 
 .home-content {
     flex: 1;
-}
+    background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fff5f8 60%,
+    #ffeef4 100%
+    );
+    }
