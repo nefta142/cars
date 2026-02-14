@@ -2,6 +2,14 @@
     padding: 2rem 1rem;
 }
 
+.home-section h2 {
+    margin: 0 0 0.9rem 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #111;
+}
+
 .row-head {
     display: flex;
     align-items: center;
@@ -27,6 +35,11 @@
     place-items: center;
 
     background: rgba(0, 0, 0, 0.12);
+}
+
+.row-btn:focus-visible {
+    outline: 3px solid rgba(201, 182, 255, 0.9);
+    outline-offset: 2px;
 }
 
 .row-btn:hover {
@@ -61,10 +74,5 @@
 
 .home-content {
     flex: 1;
-    background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #fff5f8 60%,
-    #ffeef4 100%
-    );
-    }
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f8 60%, #ffeef4 100%);
+}

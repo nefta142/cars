@@ -1,14 +1,13 @@
 .ferrari-layout {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .ferrari-content {
     flex: 1;
-    max-width: 100%;
     margin: 0 auto;
     padding: 2.5rem 1rem;
+    background: linear-gradient(180deg,#ffffff 0%,#fff5f8 60%,#ffeef4 100%);
 }
 
 .ferrari-head {
