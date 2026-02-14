@@ -1,4 +1,6 @@
 .car-card.row {
+    min-width: 25.5rem;
+    max-width: 25.5rem;
     height: 28.15rem;
     border-radius: 1.25rem;
     overflow: hidden;

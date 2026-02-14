@@ -10,7 +10,7 @@ function CarRow({ title, items }) {
 
     const scroll = (dir) => {
         if (!rowRef.current) return;
-        const amount = 420;
+        const amount = 520;
         rowRef.current.scrollBy({ left: dir * amount, behavior: "smooth" });
     };
 
@@ -35,7 +35,7 @@ function CarRow({ title, items }) {
 }
 
 function Home() {
-    const featured = (brand) => cars.filter((c) => c.brand === brand).slice(0, 4);
+    const featured = (brand) => cars.filter((c) => c.brand === brand).slice(0, 5);
 
     return (
         <div className="home-layout">
