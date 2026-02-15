@@ -1,15 +1,45 @@
 .car-card.row {
-    min-width: 360px;
-    height: 460px;
-    border-radius: 22px;
+    min-width: 25.5rem;
+    max-width: 25.5rem;
+    height: 28.15rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     background: #0b0b0b;
     color: white;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     scroll-snap-align: start;
+}
+
+.car-card.grid {
+    height: 28.15rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #0b0b0b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-card.grid .car-card-content {
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.car-card.grid .car-card-model {
+    font-size: 1.25rem;
+}
+
+.car-card.grid .car-card-media {
+    height: 70%;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.car-card.grid .car-card-media img {
+    object-fit: cover;
+    height: auto;
+    border-radius: 12px;
 }
 
 .car-card-content {
@@ -50,9 +80,19 @@
     object-fit: contain;
 }
 
-@media (max-width: 480px) {
-    .car-card.row {
-        min-width: 300px;
-        height: 420px;
-    }
+.car-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.car-card-media img {
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-card-media img {
+    transform: scale(1.05);
 }

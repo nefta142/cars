@@ -1,0 +1,32 @@
+.ford-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.ford-content {
+    flex: 1;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(180deg,#ffffff 0%,#fff5f8 60%,#ffeef4 100%);
+}
+
+.ford-head {
+    margin-bottom: 1.25rem;
+}
+
+.ford-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.ford-subtitle {
+    margin: 0.35rem 0 0 0;
+    color: #555;
+}
+
+.ford-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
