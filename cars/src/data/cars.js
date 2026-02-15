@@ -30,16 +30,16 @@ export const cars = [
     { id: "718-cayman-gt4-rs", brand: "Porsche", model: "718 Cayman GT4 RS", year: 2023, image: carImages["718-cayman-gt4-rs"] },
     
     //Mitsubishi
-    { id: "ford-focus", brand: "Mitsubishi", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Mitsubishi", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Mitsubishi", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Mitsubishi", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Mitsubishi", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
+    { id: "lancer-evo-x", brand: "Mitsubishi", model: "Lancer Evo X", year: 2008, image: carImages["lancer-evo-x"] },
+    { id: "lancer-evolution-ix", brand: "Mitsubishi", model: "Lancer Evolution IX", year: 2006, image: carImages["lancer-evolution-ix"] },
+    { id: "lancer-evolution-vi", brand: "Mitsubishi", model: "Lancer Evolution VI", year: 2001, image: carImages["lancer-evolution-vi"] },
+    { id: "mitsubishi-eclipse-gsx", brand: "Mitsubishi", model: "Eclipse GSX", year: 1997, image: carImages["mitsubishi-eclipse-gsx"] },
+    { id: "3000gt-vr4", brand: "Mitsubishi", model: "3000GT VR4", year: 1998, image: carImages["3000gt-vr4"] },
     //Ferrari
-    { id: "ford-focus", brand: "Ferrari", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Ferrari", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Ferrari", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Ferrari", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] },
-    { id: "ford-focus", brand: "Ferrari", model: "Focus RS500", year: 2007, image: carImages["focus-rs-500"] }
+    { id: "488-pista", brand: "Ferrari", model: "488 Pista", year: 2021, image: carImages["488-pista"] },
+    { id: "f8-tributo", brand: "Ferrari", model: "F8 Tributo", year: 2020, image: carImages["f8-tributo"] },
+    { id: "ferrari-458", brand: "Ferrari", model: "458 Italia ", year: 2015, image: carImages["ferrari-458"] },
+    { id: "812-superfast", brand: "Ferrari", model: "812 Superfast", year: 2017, image: carImages["812-superfast"] },
+    { id: "sf90-stralade", brand: "Ferrari", model: "SF90 Stralade", year: 2019, image: carImages["sf90-stralade"] }
     
 ];

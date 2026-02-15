@@ -17,7 +17,17 @@ import Gt3Rs911 from "../assets/images/911-gt3-rs.avif"
 import Turbo911s from "../assets/images/911-turbo-s.jpg"
 import carrera9114Gts from "../assets/images/911-carrera-4-gts.webp"
 import cayman718Gt4 from "../assets/images/718-cayman-gt4.jpg"
-import cayman718Gt4Rs from "../assets/images/q718-cayman-gt4-rs.jpg"
+import cayman718Gt4Rs from "../assets/images/718-cayman-gt4-rs.jpg"
+import lancerEvoX from "../assets/images/lancer-evo-x.avif"
+import lancerEvolutionIx from "../assets/images/lancer-evolution-ix.jpg"
+import lancerEvolutionVi from "../assets/images/lancer-evolution-vi.webp"
+import eclipseGsx from "../assets/images/mitsubishi-eclipse-gsx.jpg"
+import gt3000Vr4 from "../assets/images/3000gt-vr4.jpg"
+import pista488 from "../assets/images/488-pista.webp"
+import f8Tributo from "../assets/images/f8-tributo.jpg"
+import ferrari458Italia from "../assets/images/ferrari-458.jpg"
+import superFast812 from "../assets/images/812-superfast.avif"
+import sf90Stralade from "../assets/images/sf90-stralade.webp"
 export const carImages = {
     //Ford
     "focus-rs-500": focusRS,
@@ -47,7 +57,17 @@ export const carImages = {
     "718-cayman-gt4-rs": cayman718Gt4Rs,
 
     //Mitsubishi
+    "lancer-evo-x" : lancerEvoX,
+    "lancer-evolution-ix": lancerEvolutionIx,
+    "lancer-evolution-vi" : lancerEvolutionVi,
+    "mitsubishi-eclipse-gsx" : eclipseGsx,
+    "3000gt-vr4" : gt3000Vr4,
 
     //Ferrari
-    
+    "488-pista" : pista488,
+    "f8-tributo" : f8Tributo,
+    "ferrari-458" : ferrari458Italia,
+    "812-superfast" : superFast812,
+    "sf90-stralade" : sf90Stralade
+
 };
