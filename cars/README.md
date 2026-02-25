@@ -60,10 +60,10 @@ To run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/nefta142/cars
 
 # Enter the project directory
-cd your-repository
+cd cars/cars
 
 # Install dependencies
 npm install
