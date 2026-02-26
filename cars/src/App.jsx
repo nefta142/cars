@@ -9,7 +9,7 @@ import Toyota from "./pages/toyota/Toyota"
 import Ford from "./pages/ford/Ford"
 import AuthPage from "./pages/auth/AuthPage"
 import RequireAuth from "./components/auth/RequireAuth"
-import ChatPage from "./pages/chat/Chatpage"
+import ChatPage from "./pages/chat/Chatpage";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
@@ -27,11 +27,11 @@ function App() {
           <Route path="/ferrari" element={<Ferrari />}/>
           <Route path="/policy" element={<Policy />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="*" element={<Home />}/>
           <Route path="/auth" element={<AuthPage />}/>
           <Route element={<RequireAuth />}>
             <Route path="/chat" element={<ChatPage />} />
           </Route>
+          <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>
     </>
