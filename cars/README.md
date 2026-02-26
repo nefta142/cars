@@ -1,11 +1,11 @@
-# 🚗 Car Showcase Web Application
+# Car Showcase Web Application
 
 A responsive React web application developed as an educational project.  
 This application displays different car brands using reusable components, dynamic JSON data rendering, Firebase authentication, and a real-time community chat system.
 
 ---
 
-## 📌 Main Page Description
+## Main Page Description
 
 The Home page dynamically renders featured cars from a local JSON data array.
 

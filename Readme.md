@@ -1,56 +1,115 @@
 # Car Showcase Web Application
 
 A responsive React web application developed as an educational project.  
-This application displays different car brands using reusable components, dynamic JSON data rendering, routing, and a clean responsive layout.
+This application displays different car brands using reusable components, dynamic JSON data rendering, Firebase authentication, and a real-time community chat system.
 
 ---
 
-## Main Page Description 
+## Main Page Description
 
-The Home page dynamically renders featured cars from a JSON data array.  
-Each car is displayed using a reusable `CarCard` component.  
+The Home page dynamically renders featured cars from a local JSON data array.
+
+Each car is displayed using a reusable `CarCard` component that receives props.
 
 The layout includes:
-- A responsive horizontal scroll section
-- A navigation Header with dropdown menu
-- A Footer with legal information and internal navigation
 
-The page is accessible via:
-- http://localhost:5173
-- http://localhost:5173/home
+- A responsive horizontal scroll section  
+- Interactive scroll buttons  
+- A navigation Header with dropdown menu  
+- A Footer with legal information and internal navigation  
+- State management for interactive behavior  
 
----
+The Home page is accessible via:
 
-## Third-Party Components Used
-
-The project integrates the following external libraries:
-
-- **React Leaflet** – Interactive map component  
-  https://react-leaflet.js.org/
-
-- **Leaflet** – JavaScript library for interactive maps  
-  https://leafletjs.com/
-
-- **React Icons** – Social media icons  
-  https://react-icons.github.io/react-icons/
+- http://localhost:5173  
+- http://localhost:5173/home  
 
 ---
 
-## Tutorials and Resources
+##  Authentication System
 
-The following resources were used as learning references:
+The application includes a full authentication system powered by **Firebase Authentication**.
 
-- React Router Documentation  
-  https://reactrouter.com/
+Users can:
 
-- Leaflet Official Documentation  
-  https://leafletjs.com/
+- Register with email and password  
+- Log in with existing credentials  
+- Log out securely  
+- Access protected routes (Chat page)  
 
-- Best README Template  
-  https://github.com/othneildrew/Best-README-Template
+Protected routes are handled using a custom `RequireAuth` component.
 
-- CSS Flexbox Guide  
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+###  Test Account
+
+If you want to test the chat without registering:
+
+Email: prueba@gmail.com
+
+Password: 123456
+
+
+---
+
+##  Community Chat (Firebase Firestore)
+
+The project includes a real-time community chat system using **Firebase Firestore**.
+
+Features:
+
+- Messages stored in Firestore database  
+- Real-time updates using `onSnapshot`  
+- Channel-based filtering (General, Ford, Toyota, Subaru, Porsche, Mitsubishi, Ferrari)  
+- Search messages by text or user email  
+- Auto-scroll to latest message  
+- Only authenticated users can send messages  
+
+This fulfills the requirement of reading and filtering JSON object arrays from Firebase.
+
+---
+
+##  Third-Party Libraries
+
+This project uses:
+
+- React Router DOM  
+- Firebase (Authentication + Firestore)  
+- React Leaflet  
+- Leaflet  
+- React Icons  
+
+---
+
+##  Project Structure
+
+src/
+│
+├── components/
+│ ├── header/
+│ ├── footer/
+│ ├── car-card/
+│ ├── auth/
+│ └── map/
+│
+├── pages/
+│ ├── home/
+│ ├── ford/
+│ ├── toyota/
+│ ├── about/
+│ ├── policy/
+│ ├── auth/
+│ └── chat/
+│
+├── context/
+├── services/
+└── data/
+
+
+Naming conventions:
+
+- PascalCase → Component files  
+- kebab-case → CSS class names  
+- camelCase → Variables  
+- Boolean variables use prefixes like `is`, `has`, `should`  
 
 ---
 
