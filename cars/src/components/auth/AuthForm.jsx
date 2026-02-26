@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../services/firebase/firebase";
 import {
     createUserWithEmailAndPassword,
@@ -9,6 +10,10 @@ import { useAuth } from "../../context/AuthContext";
 import "./AuthForm.css";
 
 function AuthForm() {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const redirectTo = location.state?.from || "/chat";
+
     const { user } = useAuth();
 
     const [isRegister, setIsRegister] = useState(true);
@@ -17,6 +22,12 @@ function AuthForm() {
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        if (user) {
+            navigate(redirectTo, { replace: true });
+        }
+    }, [user, navigate, redirectTo]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,8 +40,10 @@ function AuthForm() {
             } else {
                 await signInWithEmailAndPassword(auth, email, password);
             }
+
             setEmail("");
             setPassword("");
+
         } catch (err) {
             setError(err?.message || "Authentication error");
         } finally {
