@@ -9,7 +9,7 @@ import Toyota from "./pages/toyota/Toyota"
 import Ford from "./pages/ford/Ford"
 import AuthPage from "./pages/auth/AuthPage"
 import RequireAuth from "./components/auth/RequireAuth"
-import ChatPage from "./pages/chat/Chatpage";
+import ChatPage from "./pages/chat/ChatPage";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
