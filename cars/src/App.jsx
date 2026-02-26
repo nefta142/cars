@@ -7,9 +7,8 @@ import Porsche from "./pages/porsche/Porsche"
 import Subaru from "./pages/subaru/Subaru"
 import Toyota from "./pages/toyota/Toyota"
 import Ford from "./pages/ford/Ford"
-import Chat from "./pages/chat/Chat"
+import AuthPage from "./pages/auth/AuthPage"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-
 
 
 function App() {
@@ -26,8 +25,8 @@ function App() {
           <Route path="/ferrari" element={<Ferrari />}/>
           <Route path="/policy" element={<Policy />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="/chat" element={<Chat />}/>
           <Route path="*" element={<Home />}/>
+          <Route path="/auth" element={<AuthPage />}/>
         </Routes>
       </BrowserRouter>
     </>

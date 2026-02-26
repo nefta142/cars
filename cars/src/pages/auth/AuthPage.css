@@ -1,0 +1,16 @@
+.auth-main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-page {
+    flex: 1;
+    padding: 2.5rem 1rem;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #fff5f8 60%,
+            #ffeef4 100%);
+}
