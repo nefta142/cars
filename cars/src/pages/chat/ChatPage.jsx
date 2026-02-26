@@ -10,6 +10,7 @@ import {
     orderBy,
     query,
     serverTimestamp,
+    limit,
 } from "firebase/firestore";
 import "./ChatPage.css";
 
@@ -19,34 +20,53 @@ function ChatPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [messages, setMessages] = useState([]);
 
-    const [channel, setChannel] = useState("General"); 
-    const [search, setSearch] = useState(""); 
+    const [channel, setChannel] = useState("General");
+    const [search, setSearch] = useState("");
     const [text, setText] = useState("");
 
     const listRef = useRef(null);
 
     const channels = useMemo(
-        () => ["General", "Ford", "Toyota", "Subaru", "Porsche", "Mitsubishi", "Ferrari"],
+        () => [
+            "General",
+            "Ford",
+            "Toyota",
+            "Subaru",
+            "Porsche",
+            "Mitsubishi",
+            "Ferrari",
+        ],
         []
     );
 
+
     useEffect(() => {
-        const q = query(collection(db, "messages"), orderBy("createdAt", "asc"));
+        const q = query(
+            collection(db, "messages"),
+            orderBy("createdAt", "asc"),
+            limit(100)
+        );
 
         const unsub = onSnapshot(
             q,
             (snap) => {
-                const data = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+                const data = snap.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+
                 setMessages(data);
                 setIsLoading(false);
             },
-            () => {
+            (err) => {
+                console.error("Firestore error:", err);
                 setIsLoading(false);
             }
         );
 
         return () => unsub();
     }, []);
+
 
     const filteredMessages = useMemo(() => {
         const s = search.trim().toLowerCase();
@@ -63,10 +83,12 @@ function ChatPage() {
         });
     }, [messages, channel, search]);
 
+
     useEffect(() => {
         if (!listRef.current) return;
         listRef.current.scrollTop = listRef.current.scrollHeight;
     }, [filteredMessages.length]);
+
 
     const sendMessage = async (e) => {
         e.preventDefault();
@@ -89,12 +111,10 @@ function ChatPage() {
 
             <main className="chat-content">
                 <div className="chat-head">
-                    <div>
-                        <h1 className="chat-title">Community Chat</h1>
-                        <p className="chat-subtitle">
-                            Logged as <strong>{user.email}</strong>
-                        </p>
-                    </div>
+                    <h1 className="chat-title">Community Chat</h1>
+                    <p className="chat-subtitle">
+                        Logged as <strong>{user.email}</strong>
+                    </p>
                 </div>
 
                 <div className="chat-controls">
@@ -106,9 +126,7 @@ function ChatPage() {
                             onChange={(e) => setChannel(e.target.value)}
                         >
                             {channels.map((c) => (
-                                <option key={c} value={c}>
-                                    {c}
-                                </option>
+                                <option key={c}>{c}</option>
                             ))}
                         </select>
                     </label>
@@ -126,19 +144,24 @@ function ChatPage() {
 
                 <div className="chat-box" ref={listRef}>
                     {isLoading ? (
-                        <p className="chat-state">Loading messages...</p>
+                        <p className="chat-state">Connecting to chat...</p>
                     ) : filteredMessages.length === 0 ? (
-                        <p className="chat-state">No messages yet in this channel.</p>
+                        <p className="chat-state">
+                            No messages yet in this channel.
+                        </p>
                     ) : (
                         filteredMessages.map((m) => (
                             <div
                                 key={m.id}
-                                className={`chat-msg ${m.userEmail === user.email ? "mine" : ""}`}
+                                className={`chat-msg ${m.userEmail === user.email ? "mine" : ""
+                                    }`}
                             >
                                 <div className="chat-meta">
                                     <span className="chat-user">{m.userEmail}</span>
                                     <span className="chat-time">
-                                        {m.createdAt?.toDate ? m.createdAt.toDate().toLocaleString() : ""}
+                                        {m.createdAt?.toDate
+                                            ? m.createdAt.toDate().toLocaleString()
+                                            : ""}
                                     </span>
                                 </div>
                                 <p className="chat-text">{m.text}</p>
@@ -154,7 +177,11 @@ function ChatPage() {
                         onChange={(e) => setText(e.target.value)}
                         placeholder={`Message in ${channel}...`}
                     />
-                    <button className="chat-send" type="submit" disabled={!text.trim()}>
+                    <button
+                        className="chat-send"
+                        type="submit"
+                        disabled={!text.trim()}
+                    >
                         Send
                     </button>
                 </form>
