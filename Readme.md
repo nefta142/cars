@@ -79,39 +79,6 @@ This project uses:
 
 ---
 
-##  Project Structure
-
-src/
-│
-├── components/
-│ ├── header/
-│ ├── footer/
-│ ├── car-card/
-│ ├── auth/
-│ └── map/
-│
-├── pages/
-│ ├── home/
-│ ├── ford/
-│ ├── toyota/
-│ ├── about/
-│ ├── policy/
-│ ├── auth/
-│ └── chat/
-│
-├── context/
-├── services/
-└── data/
-
-
-Naming conventions:
-
-- PascalCase → Component files  
-- kebab-case → CSS class names  
-- camelCase → Variables  
-- Boolean variables use prefixes like `is`, `has`, `should`  
-
----
 
 ## Installation & Setup
 
