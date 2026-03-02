@@ -1,5 +1,4 @@
 .chat-layout {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -10,10 +9,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    background: linear-gradient(180deg,
-            #ffffff 0%,
-            #fff5f8 60%,
-            #ffeef4 100%);
 }
 
 

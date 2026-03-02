@@ -4,6 +4,7 @@ import Footer from "../../components/footer/Footer";
 import CarCard from "../../components/car-card/CarCard";
 import { cars } from "../../data/cars";
 import "./Home.css";
+import Chat from "../../components/chat/Chat";
 
 function CarRow({ title, items }) {
     const rowRef = useRef(null);
@@ -49,7 +50,7 @@ function Home() {
                 <CarRow title="Mitsubishi destacados" items={featured("Mitsubishi")} />
                 <CarRow title="Ferrari destacados" items={featured("Ferrari")} />
             </main>
-
+            <Chat />
             <Footer />
         </div>
     );
