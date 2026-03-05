@@ -19,7 +19,7 @@ function Header() {
         
 
         <ul className="header-menu">
-          <li className="menu-item has-submenu">
+          <li className="menu-item has-submhttps://www.canarias7.es/rss/enu">
             <button className="menu-btn" type="button" onClick={toggleMenu}>
               Cars <span className="menu-dropdown">&#9660;</span>
             </button>
@@ -42,10 +42,7 @@ function Header() {
             <Link to="/chat" onClick={() => setOpenFooter(false)} className="menu-link">Chat</Link>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#">FAQs</a>
-          </li>
-          <li className="menu-item">
-            <a className="menu-link" href="#">#Trending</a>
+            <Link to="/rss" onClick={() => setOpenFooter(false)} className="menu-link">RSS</Link>
           </li>
         </ul>
 

@@ -28,9 +28,8 @@ function App() {
           <Route path="/policy" element={<Policy />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/auth" element={<AuthPage />}/>
-          <Route element={<RequireAuth />}>
-            <Route path="/chat" element={<ChatPage />} />
-          </Route>
+          <Route element={<RequireAuth />}/>
+          <Route path="/chat" element={<ChatPage />} />
           <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>

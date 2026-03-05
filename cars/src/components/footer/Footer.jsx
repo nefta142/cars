@@ -45,9 +45,9 @@ function Footer() {
               </div>
             </div>
 
+            <Link to="/about" onClick={() => setOpenFooter(false)}>About</Link>
             <Link to="/chat" onClick={() => setOpenFooter(false)}>Chat</Link>
-            <Link to="/blog" onClick={() => setOpenFooter(false)}>Blog</Link>
-            <Link to="/faqs" onClick={() => setOpenFooter(false)}>FAQs</Link>
+            <Link to="/rss" onClick={() => setOpenFooter(false)}>RSS</Link>
           </div>
 
           <div className="main-footer-apps">
