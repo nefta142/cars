@@ -176,6 +176,20 @@
     cursor: not-allowed;
 }
 
+.chat-logout {
+    margin-left: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: #a61ad1;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.chat-logout:hover {
+    background: #a61ad1;;
+}
 
 @media (max-width: 768px) {
     .chat-msg {

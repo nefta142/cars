@@ -42,10 +42,7 @@ function Header() {
             <Link to="/chat" onClick={() => setOpenFooter(false)} className="menu-link">Chat</Link>
           </li>
           <li className="menu-item">
-            <a className="menu-link" href="#">FAQs</a>
-          </li>
-          <li className="menu-item">
-            <a className="menu-link" href="#">#Trending</a>
+            <Link to="/auth" onClick={() => setOpenFooter(false)} className="menu-link">Authentication</Link>
           </li>
         </ul>
 

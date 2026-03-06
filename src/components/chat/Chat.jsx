@@ -1,18 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
-import { db } from "../../services/firebase/firebase";
-import {
-    addDoc,
-    collection,
-    onSnapshot,
-    orderBy,
-    query,
-    serverTimestamp,
-    limit,
-} from "firebase/firestore";
+import { db, auth } from "../../services/firebase/firebase";
+import {addDoc,collection,onSnapshot,orderBy,query,serverTimestamp,limit,} from "firebase/firestore";
 import "./Chat.css";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 function Chat() {
     const { user } = useAuth();
@@ -102,6 +95,14 @@ function Chat() {
         setText("");
     };
 
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+        } catch (err) {
+            console.error("Logout error:", err);
+        }
+    };
+
     return (
         <div className="chat-layout">
             <main className="chat-content">
@@ -111,9 +112,10 @@ function Chat() {
                         {user ? (
                             <>
                                 Logged as <strong>{user.email}</strong>
+                                <button className="chat-logout" onClick={handleLogout}>Logout</button>
                             </>
                         ) : (
-                            <Link to="/auth" onClick={() => setOpenFooter(false)}><>You can read messages. Log in to send one.</></Link>
+                            <Link to="/auth"><>You can read messages. Log in to send one.</></Link>
                         )}
                     </p>
                 </div>
