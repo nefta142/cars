@@ -16,7 +16,7 @@ function AuthForm() {
 
     const { user } = useAuth();
 
-    const [isRegister, setIsRegister] = useState(true);
+    const [isRegister, setIsRegister] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 

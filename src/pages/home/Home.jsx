@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import CarCard from "../../components/car-card/CarCard";
 import { cars } from "../../data/cars";
+import Chat from "../../components/chat/Chat";
 import "./Home.css";
 
 function CarRow({ title, items }) {
@@ -48,6 +49,7 @@ function Home() {
                 <CarRow title="Porsche destacados" items={featured("Porsche")} />
                 <CarRow title="Mitsubishi destacados" items={featured("Mitsubishi")} />
                 <CarRow title="Ferrari destacados" items={featured("Ferrari")} />
+                <Chat />
             </main>
 
             <Footer />

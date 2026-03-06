@@ -1,16 +1,122 @@
-.auth-main {
+.auth-layout {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #0f0f10;
 }
 
-.auth-page {
+.auth-content {
     flex: 1;
-    padding: 2.5rem 1rem;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(180deg,
-            #ffffff 0%,
-            #fff5f8 60%,
-            #ffeef4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: #1b1b1d;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2b2b2f;
+}
+
+
+.auth-switch {
+    display: flex;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.auth-switch button {
+    flex: 1;
+    padding: 10px;
+    background: #1b1b1d;
+    color: #aaa;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.auth-switch button:hover {
+    background: #242427;
+}
+
+.auth-switch button.active {
+    background: #922492;
+    color: white;
+}
+
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #fff;
+    font-size: 22px;
+}
+
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.auth-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #bbb;
+    gap: 6px;
+}
+
+.auth-form input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #121214;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.auth-form input:focus {
+    border-color: #922492;
+}
+
+
+.auth-error {
+    font-size: 13px;
+    color: #922492;
+    text-align: center;
+}
+
+
+.auth-form button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #922492;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-form button:hover {
+    background: #922492;
+}
+
+.auth-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
