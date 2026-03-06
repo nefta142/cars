@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { db, auth } from "../../services/firebase/firebase";
-import {addDoc,collection,onSnapshot,orderBy,query,serverTimestamp,limit,} from "firebase/firestore";
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, limit, doc, updateDoc } from "firebase/firestore";
 import "./Chat.css";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -103,6 +103,20 @@ function Chat() {
         }
     };
 
+    const handleDeleteMessage = async (messageId, messageUserEmail) => {
+        if (!user) return;
+        if (user.email !== messageUserEmail) return;
+
+        try {
+            await updateDoc(doc(db, "messages", messageId), {
+                text: "Mensaje eliminado",
+                deleted: true,
+            });
+        } catch (err) {
+            console.error("Delete message error:", err);
+        }
+    };
+
     return (
         <div className="chat-layout">
             <main className="chat-content">
@@ -164,7 +178,19 @@ function Chat() {
                                             : ""}
                                     </span>
                                 </div>
-                                <p className="chat-text">{m.text}</p>
+
+                                <p className={`chat-text ${m.deleted ? "deleted" : ""}`}>
+                                    {m.text}
+                                </p>
+
+                                {user && m.userEmail === user.email && !m.deleted && (
+                                    <button
+                                        className="chat-delete"
+                                        onClick={() => handleDeleteMessage(m.id, m.userEmail)}
+                                    >
+                                        Delete
+                                    </button>
+                                )}
                             </div>
                         ))
                     )}
@@ -187,8 +213,8 @@ function Chat() {
                         Send
                     </button>
                 </form>
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
 

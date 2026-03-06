@@ -188,7 +188,28 @@
 }
 
 .chat-logout:hover {
-    background: #a61ad1;;
+    background: #a61ad1;
+    ;
+}
+
+
+.chat-delete {
+    margin-top: 6px;
+    background: transparent;
+    border: none;
+    color: #ff6b6b;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.chat-delete:hover {
+    text-decoration: underline;
+}
+
+.chat-text.deleted {
+    font-style: italic;
+    color: #9a9a9a;
 }
 
 @media (max-width: 768px) {
