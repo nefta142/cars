@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Car Showcase Brand Updates</title>
+    <link>https://tu-proyecto.web.app/</link>
+    <description>RSS feed with brand pages and subscription updates from Car Showcase</description>
+    <language>en</language>
+
+    <item>
+      <title>Ford brand updates</title>
+      <link>https://cars-11cf6.web.app/ford</link>
+      <description>Discover Ford models and subscribe to Ford updates in the app.</description>
+    </item>
+
+    <item>
+      <title>Toyota brand updates</title>
+      <link>https://cars-11cf6.web.app/toyota</link>
+      <description>Toyota highlights and subscription access from the project.</description>
+    </item>
+
+    <item>
+      <title>Subaru brand updates</title>
+      <link>https://cars-11cf6.web.app/subaru</link>
+      <description>Explore Subaru content and follow updates from the app.</description>
+    </item>
+
+    <item>
+      <title>Porsche brand updates</title>
+      <link>https://cars-11cf6.web.app/porsche</link>
+      <description>Porsche content available through the Car Showcase project.</description>
+    </item>
+
+    <item>
+      <title>Mitsubishi brand updates</title>
+      <link>https://cars-11cf6.web.app/mitsubishi</link>
+      <description>Mitsubishi page and brand-related app content.</description>
+    </item>
+
+    <item>
+      <title>Ferrari brand updates</title>
+      <link>https://cars-11cf6.web.app/ferrari</link>
+      <description>Ferrari highlights and subscription-oriented content.</description>
+    </item>
+  </channel>
+</rss>

@@ -8,8 +8,8 @@ import Subaru from "./pages/subaru/Subaru"
 import Toyota from "./pages/toyota/Toyota"
 import Ford from "./pages/ford/Ford"
 import AuthPage from "./pages/auth/AuthPage"
-import RequireAuth from "./components/auth/RequireAuth"
 import ChatPage from "./pages/chat/ChatPage";
+import Rss from "./pages/rss/Rss"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
@@ -28,9 +28,8 @@ function App() {
           <Route path="/policy" element={<Policy />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/auth" element={<AuthPage />}/>
-          <Route element={<RequireAuth />}>
-            <Route path="/chat" element={<ChatPage />} />
-          </Route>
+          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/rss" element={<Rss />} />
           <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>
