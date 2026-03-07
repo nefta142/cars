@@ -17,6 +17,8 @@ function Chat() {
     const [channel, setChannel] = useState("General");
     const [search, setSearch] = useState("");
     const [text, setText] = useState("");
+    const [editingMessageId, setEditingMessageId] = useState(null);
+    const [editingText, setEditingText] = useState("");
 
     const listRef = useRef(null);
 
@@ -117,6 +119,40 @@ function Chat() {
         }
     };
 
+    const handleStartEdit = (message) => {
+        if (!user) return;
+        if (user.email !== message.userEmail) return;
+        if (message.deleted) return;
+
+        setEditingMessageId(message.id);
+        setEditingText(message.text);
+    };
+
+    const handleCancelEdit = () => {
+        setEditingMessageId(null);
+        setEditingText("");
+    };
+
+    const handleSaveEdit = async (messageId, messageUserEmail) => {
+        if (!user) return;
+        if (user.email !== messageUserEmail) return;
+
+        const clean = editingText.trim();
+        if (!clean) return;
+
+        try {
+            await updateDoc(doc(db, "messages", messageId), {
+                text: clean,
+                edited: true,
+            });
+
+            setEditingMessageId(null);
+            setEditingText("");
+        } catch (err) {
+            console.error("Edit message error:", err);
+        }
+    };
+
     return (
         <div className="chat-layout">
             <main className="chat-content">
@@ -179,17 +215,59 @@ function Chat() {
                                     </span>
                                 </div>
 
-                                <p className={`chat-text ${m.deleted ? "deleted" : ""}`}>
-                                    {m.text}
-                                </p>
+                                {editingMessageId === m.id ? (
+                                    <div className="chat-edit-box">
+                                        <input
+                                            className="chat-edit-input"
+                                            value={editingText}
+                                            onChange={(e) => setEditingText(e.target.value)}
+                                        />
+                                        <div className="chat-edit-actions">
+                                            <button
+                                                className="chat-save"
+                                                type="button"
+                                                onClick={() => handleSaveEdit(m.id, m.userEmail)}
+                                            >
+                                                Save
+                                            </button>
+                                            <button
+                                                className="chat-cancel"
+                                                type="button"
+                                                onClick={handleCancelEdit}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <p className={`chat-text ${m.deleted ? "deleted" : ""}`}>
+                                            {m.text}
+                                            {m.edited && !m.deleted && (
+                                                <span className="chat-edited"> (edited)</span>
+                                            )}
+                                        </p>
 
-                                {user && m.userEmail === user.email && !m.deleted && (
-                                    <button
-                                        className="chat-delete"
-                                        onClick={() => handleDeleteMessage(m.id, m.userEmail)}
-                                    >
-                                        Delete
-                                    </button>
+                                        {user && m.userEmail === user.email && !m.deleted && (
+                                            <div className="chat-actions">
+                                                <button
+                                                    className="chat-edit"
+                                                    type="button"
+                                                    onClick={() => handleStartEdit(m)}
+                                                >
+                                                    Edit
+                                                </button>
+
+                                                <button
+                                                    className="chat-delete"
+                                                    type="button"
+                                                    onClick={() => handleDeleteMessage(m.id, m.userEmail)}
+                                                >
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         ))

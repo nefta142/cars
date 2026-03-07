@@ -194,7 +194,6 @@
 
 
 .chat-delete {
-    margin-top: 6px;
     background: transparent;
     border: none;
     color: #ff6b6b;
@@ -210,6 +209,66 @@
 .chat-text.deleted {
     font-style: italic;
     color: #9a9a9a;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.chat-edit,
+.chat-save,
+.chat-cancel {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.chat-edit,
+.chat-save {
+    color: #4da3ff;
+}
+
+.chat-delete,
+.chat-cancel {
+    color: #ff6b6b;
+}
+
+.chat-edit:hover,
+.chat-delete:hover,
+.chat-save:hover,
+.chat-cancel:hover {
+    text-decoration: underline;
+}
+
+.chat-edit-box {
+    margin-top: 8px;
+}
+
+.chat-edit-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #121214;
+    color: white;
+}
+
+.chat-edit-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.chat-edited {
+    color: #9a9a9a;
+    font-size: 12px;
+    font-style: italic;
 }
 
 @media (max-width: 768px) {
