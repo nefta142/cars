@@ -79,6 +79,39 @@ This project uses:
 
 ---
 
+##  Project Structure
+
+src/
+│
+├── components/
+│ ├── header/
+│ ├── footer/
+│ ├── car-card/
+│ ├── auth/
+│ └── map/
+│
+├── pages/
+│ ├── home/
+│ ├── ford/
+│ ├── toyota/
+│ ├── about/
+│ ├── policy/
+│ ├── auth/
+│ └── chat/
+│
+├── context/
+├── services/
+└── data/
+
+
+Naming conventions:
+
+- PascalCase → Component files  
+- kebab-case → CSS class names  
+- camelCase → Variables  
+- Boolean variables use prefixes like `is`, `has`, `should`  
+
+---
 
 ## Installation & Setup
 
@@ -96,21 +129,3 @@ npm install
 
 # Start development server
 npm run dev
-
-## Live Demo
-
-The project is deployed with Firebase Hosting:
-
-https://cars-11cf6.web.app
-
-## RSS Feed
-
-The application includes an RSS feed with brand updates available at:
-
-https://cars-11cf6.web.app/rss.xml
-
-Each RSS item links to a real section of the deployed application.
-
-## RSS Reader Screenshot
-
-![RSS Reader Screenshot](./src/assets/images/rss-reader-screenshot.png)
