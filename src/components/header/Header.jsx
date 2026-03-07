@@ -36,13 +36,13 @@ function Header() {
           </li>
 
           <li className="menu-item">
-            <Link to="/about" onClick={() => setOpenFooter(false)} className="menu-link">About</Link>
+            <Link to="/about" onClick={()=> setOpen(false)} className="menu-link">About</Link>
           </li>
           <li className="menu-item">
-            <Link to="/chat" onClick={() => setOpenFooter(false)} className="menu-link">Chat</Link>
+            <Link to="/chat" onClick={()=> setOpen(false)} className="menu-link">Chat</Link>
           </li>
           <li className="menu-item">
-            <Link to="/auth" onClick={() => setOpenFooter(false)} className="menu-link">Authentication</Link>
+            <Link to="/auth" onClick={()=> setOpen(false)}className="menu-link">Authentication</Link>
           </li>
         </ul>
 

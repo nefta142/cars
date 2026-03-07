@@ -1,0 +1,65 @@
+.rss-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rss-content {
+    flex: 1;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f8 60%, #ffeef4 100%);
+    color: #222;
+}
+
+.rss-hero {
+    margin-bottom: 2rem;
+}
+
+.rss-hero h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.rss-hero p {
+    margin: 0;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.rss-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.rss-card {
+    background: white;
+    border-radius: 18px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.rss-card h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.rss-card p {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+.rss-card a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    color: #7c3aed;
+}
+
+.rss-card a:hover {
+    text-decoration: underline;
+}
