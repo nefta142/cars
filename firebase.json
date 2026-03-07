@@ -6,9 +6,22 @@
       "**/.*",
       "**/node_modules/**"
     ],
+
+    "headers": [
+      {
+        "source": "/rss.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/rss+xml"
+          }
+        ]
+      }
+    ],
+
     "rewrites": [
       {
-        "source": "**",
+        "source": "!/rss.xml",
         "destination": "/index.html"
       }
     ]
