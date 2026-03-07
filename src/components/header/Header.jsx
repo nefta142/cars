@@ -4,48 +4,73 @@ import "./Header.css";
 import logo from "../../assets/images/logo.png";
 
 function Header() {
-  const [open, setOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCarsMenuOpen, setIsCarsMenuOpen] = useState(false);
 
-  function toggleMenu() {
-    setOpen(!open);
+  function toggleMobileMenu() {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }
+
+  function toggleCarsMenu() {
+    setIsCarsMenuOpen(!isCarsMenuOpen);
+  }
+
+  function closeAllMenus() {
+    setIsMobileMenuOpen(false);
+    setIsCarsMenuOpen(false);
   }
 
   return (
     <header className="header">
       <nav className="header-nav">
+        <Link to="/home" className="header-logo" onClick={closeAllMenus}>
+          <img src={logo} alt="Car Showcase logo" />
+        </Link>
 
-        
-          <Link to="/home" className="header-logo"><img src={logo} /></Link>
-        
+        <button
+          type="button"
+          className="hamburger-btn"
+          onClick={toggleMobileMenu}
+          aria-label="Open navigation menu"
+        >
+          ☰
+        </button>
 
-        <ul className="header-menu">
+        <ul className={`header-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <li className="menu-item has-submenu">
-            <button className="menu-btn" type="button" onClick={toggleMenu}>
+            <button className="menu-btn" type="button" onClick={toggleCarsMenu}>
               Cars <span className="menu-dropdown">&#9660;</span>
             </button>
 
-            <div className={`menu-header ${open ? "open" : ""}`}>
+            <div className={`menu-header ${isCarsMenuOpen ? "open" : ""}`}>
               <p className="menu-title">Cars Guide</p>
-              <Link to="/ford" onClick={()=> setOpen(false)}>Ford</Link>
-              <Link to="/toyota" onClick={()=> setOpen(false)}>Toyota</Link>
-              <Link to="/subaru" onClick={()=> setOpen(false)}>Subaru</Link>
-              <Link to="/porsche" onClick={()=> setOpen(false)}>Porsche</Link>
-              <Link to="/mitsubishi" onClick={()=> setOpen(false)}>Mitsubishi</Link>
-              <Link to="/ferrari" onClick={()=> setOpen(false)}>Ferrari</Link>
+              <Link to="/ford" onClick={closeAllMenus}>Ford</Link>
+              <Link to="/toyota" onClick={closeAllMenus}>Toyota</Link>
+              <Link to="/subaru" onClick={closeAllMenus}>Subaru</Link>
+              <Link to="/porsche" onClick={closeAllMenus}>Porsche</Link>
+              <Link to="/mitsubishi" onClick={closeAllMenus}>Mitsubishi</Link>
+              <Link to="/ferrari" onClick={closeAllMenus}>Ferrari</Link>
             </div>
           </li>
 
           <li className="menu-item">
-            <Link to="/about" onClick={()=> setOpen(false)} className="menu-link">About</Link>
+            <Link to="/about" onClick={closeAllMenus} className="menu-link">
+              About
+            </Link>
           </li>
+
           <li className="menu-item">
-            <Link to="/chat" onClick={()=> setOpen(false)} className="menu-link">Chat</Link>
+            <Link to="/chat" onClick={closeAllMenus} className="menu-link">
+              Chat
+            </Link>
           </li>
+
           <li className="menu-item">
-            <Link to="/auth" onClick={()=> setOpen(false)}className="menu-link">Authentication</Link>
+            <Link to="/auth" onClick={closeAllMenus} className="menu-link">
+              Authentication
+            </Link>
           </li>
         </ul>
-
       </nav>
     </header>
   );
