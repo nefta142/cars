@@ -7,7 +7,7 @@ function Rss() {
         {
             id: 1,
             title: "RSS propio del proyecto",
-            url: "https://cars-11cf6.web.app/rss.xml",
+            url: "https://rss.app/feed/uICEDjMakPBWyvFc?utm_source=rssviewer&utm_medium=website",
             description:
                 "Feed RSS del proyecto Car Showcase con enlaces a las secciones principales de la aplicación.",
         },

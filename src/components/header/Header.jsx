@@ -27,14 +27,7 @@ function Header() {
           <img src={logo} alt="Car Showcase logo" />
         </Link>
 
-        <button
-          type="button"
-          className="hamburger-btn"
-          onClick={toggleMobileMenu}
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button>
+        <button type="button" className="hamburger-btn" onClick={toggleMobileMenu}>&#9776;</button>
 
         <ul className={`header-menu ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <li className="menu-item has-submenu">
