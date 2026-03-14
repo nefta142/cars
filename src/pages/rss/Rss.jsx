@@ -3,13 +3,21 @@ import Footer from "../../components/footer/Footer";
 import "./Rss.css";
 
 function Rss() {
+
     const rssLinks = [
         {
             id: 1,
-            title: "RSS propio del proyecto",
-            url: "https://rss.app/feed/uICEDjMakPBWyvFc?utm_source=rssviewer&utm_medium=website",
+            title: "Project RSS Feed (XML)",
+            url: "https://cars-11cf6.web.app/rss.xml",
             description:
-                "Feed RSS del proyecto Car Showcase con enlaces a las secciones principales de la aplicación.",
+                "Direct XML feed containing the latest updates of the Car Showcase project.",
+        },
+        {
+            id: 2,
+            title: "RSS Feed Viewer",
+            url: "https://rssatom.com",
+            description:
+                "Online RSS reader displaying the feed items and linking to the updates page of the application.",
         },
     ];
 
@@ -33,7 +41,7 @@ function Rss() {
                             <h2>{item.title}</h2>
                             <p>{item.description}</p>
                             <a href={item.url} target="_blank" rel="noreferrer">
-                                Abrir RSS
+                                Open link
                             </a>
                         </article>
                     ))}

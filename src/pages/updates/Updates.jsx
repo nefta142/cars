@@ -9,7 +9,7 @@ function Updates(){
             <main className="updates-main">
                 <h2 className="updates-title">Latest 5 changes</h2>
                 <div className="updates-grid">
-                    <div className="updates-content">
+                    <div className="updates-content" id="mobile-header">
                         <h2 className="content-title">Improved mobile header navigation</h2>
                         <p className="update-date">March 2026</p>
                         <p className="content-text">
@@ -18,7 +18,7 @@ function Updates(){
                             the different car brand pages on smaller screens.
                         </p>
                     </div>
-                    <div className="updates-content">
+                    <div className="updates-content" id="rss-support">
                         <h2 className="content-title">Added RSS page and feed support</h2>
                         <p className="update-date">March 2026</p>
                         <p className="content-text"> 
@@ -27,7 +27,7 @@ function Updates(){
                             the project and links directly to relevant sections of the application.
                             </p>
                     </div>
-                    <div className="updates-content">
+                    <div className="updates-content" id="firebase-hosting">
                         <h2 className="content-title">Deployed project to Firebase Hosting</h2>
                         <p className="update-date">March 2026</p>
                         <p className="content-text">
@@ -36,7 +36,7 @@ function Updates(){
                             publicly available and improves the testing and demonstration process.
                         </p>
                     </div>
-                    <div className="updates-content">
+                    <div className="updates-content" id="brand-styling">
                         <h2 className="content-title">Updated car brand page's styling</h2>
                         <p className="update-date">March 2026</p>
                         <p className="content-text">
@@ -46,7 +46,7 @@ function Updates(){
                         
                         </p>
                     </div>
-                    <div className="updates-content">
+                    <div className="updates-content" id="chat-crud">
                         <h2 className="content-title">Improved chat CRUD user experience</h2>
                         <p className="update-date">March 2026</p>
                         <p className="content-text">
