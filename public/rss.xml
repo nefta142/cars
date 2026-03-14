@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Car Showcase Brand Updates</title>
-    <link>https://tu-proyecto.web.app/</link>
-    <description>RSS feed with brand pages and subscription updates from Car Showcase</description>
+    <title>Car Showcase Latest Updates</title>
+    <link>https://cars-11cf6.web.app</link>
+    <description>RSS feed with the latest updates and improvements made to the Car Showcase project.</description>
     <language>en</language>
 
     <item>
-      <title>Ford brand updates</title>
-      <link>https://cars-11cf6.web.app/ford</link>
-      <description>Discover Ford models and subscribe to Ford updates in the app.</description>
+      <title>Improved mobile header navigation</title>
+      <link>https://cars-11cf6.web.app/updates</link>
+      <description>The mobile navigation menu was improved to provide a more responsive and user-friendly experience on smaller screens.</description>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">mobile-header-update</guid>
     </item>
 
     <item>
-      <title>Toyota brand updates</title>
-      <link>https://cars-11cf6.web.app/toyota</link>
-      <description>Toyota highlights and subscription access from the project.</description>
+      <title>Added RSS page and feed support</title>
+      <link>https://cars-11cf6.web.app/updates</link>
+      <description>A new RSS section and XML feed were added to the project to highlight the latest changes made to the application.</description>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">rss-support-update</guid>
     </item>
 
     <item>
-      <title>Subaru brand updates</title>
-      <link>https://cars-11cf6.web.app/subaru</link>
-      <description>Explore Subaru content and follow updates from the app.</description>
+      <title>Deployed project to Firebase Hosting</title>
+      <link>https://cars-11cf6.web.app/updates</link>
+      <description>The Car Showcase project was deployed online using Firebase Hosting for easier access and public presentation.</description>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">firebase-hosting-update</guid>
     </item>
 
     <item>
-      <title>Porsche brand updates</title>
-      <link>https://cars-11cf6.web.app/porsche</link>
-      <description>Porsche content available through the Car Showcase project.</description>
+      <title>Updated car brand page styling</title>
+      <link>https://cars-11cf6.web.app/updates</link>
+      <description>The visual design of the brand pages was improved with better spacing, cleaner cards and a more consistent layout.</description>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">brand-styling-update</guid>
     </item>
 
     <item>
-      <title>Mitsubishi brand updates</title>
-      <link>https://cars-11cf6.web.app/mitsubishi</link>
-      <description>Mitsubishi page and brand-related app content.</description>
-    </item>
-
-    <item>
-      <title>Ferrari brand updates</title>
-      <link>https://cars-11cf6.web.app/ferrari</link>
-      <description>Ferrari highlights and subscription-oriented content.</description>
+      <title>Improved chat CRUD user experience</title>
+      <link>https://cars-11cf6.web.app/updates</link>
+      <description>The chat section was refined to make creating, editing and deleting content clearer and easier for users.</description>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">chat-crud-update</guid>
     </item>
   </channel>
 </rss>

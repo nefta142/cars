@@ -87,11 +87,27 @@ https://cars-11cf6.web.app
 
 ## RSS Feed
 
-The application includes an RSS feed with brand updates available at:
+The application includes an RSS feed with the latest updates made to the project.
+
+You can access the RSS feed directly in XML format here:
 
 https://cars-11cf6.web.app/rss.xml
 
-Each RSS item links to a real section of the deployed application.
+Each RSS item links to the **Updates page** of the deployed application, where the latest improvements and changes are described.
+
+### RSS Reader
+
+To visualize the RSS feed in a reader interface:
+
+1. Go to the following website:
+
+https://rssatom.com
+
+2. Paste the RSS feed URL:
+
+https://cars-11cf6.web.app/rss.xml
+
+3. The reader will display the latest updates from the project and allow navigation to the related sections of the application.
 
 ## RSS Reader Screenshot
 
