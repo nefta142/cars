@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+  <car>
+    <id>ford-focus-rs500</id>
+    <brand>Ford</brand>
+    <model>Focus RS500</model>
+    <year>2007</year>
+    <imageKey>focus-rs-500</imageKey>
+  </car>
+  <car>
+    <id>toyota-supra-mk4</id>
+    <brand>Toyota</brand>
+    <model>Supra MK4</model>
+    <year>1993</year>
+    <imageKey>supra-mk4</imageKey>
+  </car>
+  <car>
+    <id>ferrari-488-pista</id>
+    <brand>Ferrari</brand>
+    <model>488 Pista</model>
+    <year>2021</year>
+    <imageKey>488-pista</imageKey>
+  </car>
+</cars>
