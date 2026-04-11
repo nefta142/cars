@@ -112,7 +112,7 @@ function ImportExport() {
             setStatus(`Importación completada: ${importedCars.length} coches cargados.`);
         } catch (error) {
             console.error(error);
-            setStatus("Error al importar el archivo.");
+            setStatus(`Error al importar el archivo: ${error.message}`);
         } finally {
             event.target.value = "";
             setLoading(false);

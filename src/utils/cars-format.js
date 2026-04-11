@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import { Builder, parseStringPromise } from "xml2js";
+import { Builder } from "xml2js";
 
 export function downloadFile(content, fileName, mimeType) {
     const blob = new Blob([content], { type: mimeType });
@@ -33,8 +33,11 @@ export function csvToCars(text) {
     });
 
     return result.data.map((car) => ({
-        ...car,
+        id: car.id,
+        brand: car.brand,
+        model: car.model,
         year: Number(car.year),
+        imageKey: car.imageKey,
     }));
 }
 
@@ -42,6 +45,7 @@ export function carsToXML(cars) {
     const builder = new Builder({
         rootName: "cars",
         xmldec: { version: "1.0", encoding: "UTF-8" },
+        renderOpts: { pretty: true },
     });
 
     return builder.buildObject({
@@ -49,16 +53,22 @@ export function carsToXML(cars) {
     });
 }
 
-export async function xmlToCars(text) {
-    const parsed = await parseStringPromise(text, {
-        explicitArray: false,
-    });
+export function xmlToCars(text) {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(text, "application/xml");
 
-    const items = parsed?.cars?.car || [];
-    const cars = Array.isArray(items) ? items : [items];
+    const parserError = xmlDoc.querySelector("parsererror");
+    if (parserError) {
+        throw new Error("XML no válido");
+    }
 
-    return cars.map((car) => ({
-        ...car,
-        year: Number(car.year),
+    const carNodes = Array.from(xmlDoc.getElementsByTagName("car"));
+
+    return carNodes.map((carNode) => ({
+        id: carNode.getElementsByTagName("id")[0]?.textContent?.trim() || "",
+        brand: carNode.getElementsByTagName("brand")[0]?.textContent?.trim() || "",
+        model: carNode.getElementsByTagName("model")[0]?.textContent?.trim() || "",
+        year: Number(carNode.getElementsByTagName("year")[0]?.textContent?.trim() || 0),
+        imageKey: carNode.getElementsByTagName("imageKey")[0]?.textContent?.trim() || "",
     }));
 }
