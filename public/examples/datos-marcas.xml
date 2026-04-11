@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+  <car>
+    <id>ford-cobra-svt</id>
+    <brand>Ford</brand>
+    <model>Cobra SVT</model>
+    <year>1996</year>
+    <imageKey>ford-cobra-svt</imageKey>
+  </car>
+  <car>
+    <id>toyota-gr-yaris-wrc</id>
+    <brand>Toyota</brand>
+    <model>GR Yaris WRC</model>
+    <year>2024</year>
+    <imageKey>gr-yaris-wrc</imageKey>
+  </car>
+  <car>
+    <id>subaru-impreza-22b-sti</id>
+    <brand>Subaru</brand>
+    <model>Impreza 22B STI</model>
+    <year>1998</year>
+    <imageKey>impreza-22b-sti</imageKey>
+  </car>
+  <car>
+    <id>porsche-911-carrera-4-gts</id>
+    <brand>Porsche</brand>
+    <model>911 Carrera 4 GTS</model>
+    <year>2023</year>
+    <imageKey>911-carrera-4-gts</imageKey>
+  </car>
+  <car>
+    <id>mitsubishi-lancer-evolution-vi</id>
+    <brand>Mitsubishi</brand>
+    <model>Lancer Evolution VI</model>
+    <year>2001</year>
+    <imageKey>lancer-evolution-vi</imageKey>
+  </car>
+  <car>
+    <id>ferrari-458-italia</id>
+    <brand>Ferrari</brand>
+    <model>458 Italia</model>
+    <year>2015</year>
+    <imageKey>ferrari-458</imageKey>
+  </car>
+</cars>

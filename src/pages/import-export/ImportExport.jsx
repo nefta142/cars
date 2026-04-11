@@ -15,6 +15,8 @@ import {
     carsToXML,
     xmlToCars,
     downloadFile,
+    exportCarsToSpreadsheet,
+    spreadsheetToCars,
 } from "../../utils/cars-format";
 import "./ImportExport.css";
 
@@ -84,6 +86,36 @@ function ImportExport() {
         }
     };
 
+    const handleExportXLSX = async () => {
+        try {
+            setLoading(true);
+            setStatus("Exportando XLSX...");
+            const firestoreCars = await getCarsFromFirestore();
+            exportCarsToSpreadsheet(firestoreCars, "cars.xlsx");
+            setStatus("Archivo XLSX exportado correctamente.");
+        } catch (error) {
+            console.error(error);
+            setStatus(`Error al exportar XLSX: ${error.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleExportODS = async () => {
+        try {
+            setLoading(true);
+            setStatus("Exportando ODS...");
+            const firestoreCars = await getCarsFromFirestore();
+            exportCarsToSpreadsheet(firestoreCars, "cars.ods");
+            setStatus("Archivo ODS exportado correctamente.");
+        } catch (error) {
+            console.error(error);
+            setStatus(`Error al exportar ODS: ${error.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const handleImportFile = async (event) => {
         const file = event.target.files[0];
         if (!file) return;
@@ -92,19 +124,23 @@ function ImportExport() {
             setLoading(true);
             setStatus(`Importando ${file.name}...`);
 
-            const text = await file.text();
             const extension = file.name.split(".").pop().toLowerCase();
 
             let importedCars = [];
 
             if (extension === "json") {
+                const text = await file.text();
                 importedCars = jsonToCars(text);
             } else if (extension === "csv") {
+                const text = await file.text();
                 importedCars = csvToCars(text);
             } else if (extension === "xml") {
-                importedCars = await xmlToCars(text);
+                const text = await file.text();
+                importedCars = xmlToCars(text);
+            } else if (extension === "xlsx" || extension === "ods") {
+                importedCars = await spreadsheetToCars(file);
             } else {
-                setStatus("Formato no soportado. Usa JSON, CSV o XML.");
+                setStatus("Formato no soportado. Usa JSON, CSV, XML, XLSX u ODS.");
                 return;
             }
 
@@ -128,8 +164,8 @@ function ImportExport() {
                     <h1>Import / Export Cars</h1>
                     <p className="import-export-text">
                         Desde esta página puedes subir los coches locales a Firestore,
-                        importar archivos en formato JSON, CSV o XML, y exportar los
-                        coches guardados en Firebase.
+                        importar archivos en formato JSON, CSV, XML, XLSX y ODS,
+                        y exportar los coches guardados en Firebase.
                     </p>
 
                     <div className="import-export-block">
@@ -149,7 +185,7 @@ function ImportExport() {
                             Seleccionar archivo
                             <input
                                 type="file"
-                                accept=".json,.csv,.xml"
+                                accept=".json,.csv,.xml,.xlsx,.ods"
                                 onChange={handleImportFile}
                                 disabled={loading}
                             />
@@ -181,6 +217,22 @@ function ImportExport() {
                                 disabled={loading}
                             >
                                 Exportar XML
+                            </button>
+
+                            <button
+                                className="import-export-btn"
+                                onClick={handleExportXLSX}
+                                disabled={loading}
+                            >
+                                Exportar XLSX
+                            </button>
+
+                            <button
+                                className="import-export-btn"
+                                onClick={handleExportODS}
+                                disabled={loading}
+                            >
+                                Exportar ODS
                             </button>
                         </div>
                     </div>

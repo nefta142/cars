@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ford-focus-rs500",
+    "brand": "Ford",
+    "model": "Focus RS500",
+    "year": 2007,
+    "imageKey": "focus-rs-500"
+  },
+  {
+    "id": "toyota-supra-mk4",
+    "brand": "Toyota",
+    "model": "Supra MK4",
+    "year": 1993,
+    "imageKey": "supra-mk4"
+  },
+  {
+    "id": "subaru-impreza-wrx-sti",
+    "brand": "Subaru",
+    "model": "Impreza WRX STI",
+    "year": 2004,
+    "imageKey": "impreza-wrx-sti"
+  },
+  {
+    "id": "porsche-911-gt3-rs",
+    "brand": "Porsche",
+    "model": "911 GT3 RS",
+    "year": 2016,
+    "imageKey": "911-gt3-rs"
+  },
+  {
+    "id": "mitsubishi-lancer-evo-x",
+    "brand": "Mitsubishi",
+    "model": "Lancer Evo X",
+    "year": 2008,
+    "imageKey": "lancer-evo-x"
+  },
+  {
+    "id": "ferrari-488-pista",
+    "brand": "Ferrari",
+    "model": "488 Pista",
+    "year": 2021,
+    "imageKey": "488-pista"
+  }
+]

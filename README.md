@@ -246,3 +246,107 @@ For XML import in the browser, the project uses the native `DOMParser` API for c
 - Firestore stores only clean car data
 - Importing a file replaces the current `cars` collection
 - Exporting generates files dynamically from Firebase data
+
+---
+
+## Additional Import / Export Formats
+
+For this delivery, the project extends the previous import/export system by adding spreadsheet formats.
+
+### Newly supported formats
+
+- XLSX
+- ODS
+
+These formats are supported in addition to the previously implemented formats:
+
+- JSON
+- CSV
+- XML
+
+---
+
+## Spreadsheet Import / Export
+
+The application now allows importing and exporting car data using spreadsheet formats.
+
+### Supported spreadsheet files
+
+- `datos-marcas.xlsx`
+- `datos-marcas.ods`
+
+### Export
+
+The current car data stored in Firebase Firestore can be exported dynamically as:
+
+- `cars.xlsx`
+- `cars.ods`
+
+These files are generated from the real-time data currently stored in the `cars` collection.
+
+### Import
+
+The application also allows importing spreadsheet files in:
+
+- `.xlsx`
+- `.ods`
+
+When one of these files is imported, the current cars stored in Firestore are replaced by the imported spreadsheet data.
+
+---
+
+## Spreadsheet Processing
+
+Spreadsheet processing is handled in the utility layer of the project.
+
+The project uses the **xlsx** library to:
+
+- Export car data to spreadsheet files
+- Read spreadsheet files uploaded by the user
+- Convert spreadsheet rows into car objects used by the application
+
+This allows the application to work with both Microsoft Excel and LibreOffice Calc compatible formats.
+
+---
+
+## Example Spreadsheet Files
+
+The following example files are included for testing import functionality:
+
+- [datos-marcas.xlsx](./public/examples/datos-marcas.xlsx)
+- [datos-marcas.ods](./public/examples/datos-marcas.ods)
+
+These files contain one car per brand:
+
+- Ford
+- Toyota
+- Subaru
+- Porsche
+- Mitsubishi
+- Ferrari
+
+Each example file contains different cars so that the import feature can be tested with varied data.
+
+---
+
+## Import / Export Summary
+
+The application currently supports importing and exporting car data in the following formats:
+
+- JSON
+- CSV
+- XML
+- XLSX
+- ODS
+
+All imported and exported car data is stored and managed through Firebase Firestore.
+
+---
+
+## Technical Notes
+
+- Firebase access is centralized in the `services` folder
+- Spreadsheet import/export logic is centralized in `src/utils/cars-format.js`
+- Spreadsheet files are processed with the `xlsx` library
+- Car images are resolved in the frontend using `imageKey`
+- Importing files replaces the current `cars` collection in Firestore

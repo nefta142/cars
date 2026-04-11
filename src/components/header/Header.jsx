@@ -63,6 +63,12 @@ function Header() {
               Authentication
             </Link>
           </li>
+
+          <li className="menu-item">
+            <Link to="/import" onClick={closeAllMenus} className="menu-link">
+              Import & Export 
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
