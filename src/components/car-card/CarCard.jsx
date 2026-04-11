@@ -1,6 +1,8 @@
 import "./CarCard.css";
+import {carImages} from "../../data/car-images";
 
 function CarCard({ car, variant="row" }) {
+    const imageSrc = carImages[car.imageKey];
     return (
         <article className={`car-card ${variant}`}>
             <div className="car-card-content">
@@ -9,7 +11,7 @@ function CarCard({ car, variant="row" }) {
                 <p className="car-card-year">{car.year}</p>
             </div>
             <div className="car-card-media">
-                <img src={car.image} alt={`${car.brand} ${car.model}`} />
+                <img src={imageSrc} alt={`${car.brand} ${car.model}`} />
             </div>
             
         </article>

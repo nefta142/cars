@@ -2,6 +2,7 @@ import { cars } from "../../data/cars";
 import "./BrandPage.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import { carImages } from "../../data/car-images";
 
 function BrandPage({ brand }) {
 
@@ -20,7 +21,7 @@ function BrandPage({ brand }) {
                         <article key={car.id} className="brand-card">
 
                             <img
-                                src={car.image}
+                                src={carImages[car.imageKey]}
                                 alt={car.model}
                                 className="brand-image"
                             />
