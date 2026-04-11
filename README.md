@@ -131,3 +131,118 @@ npm install
 
 # Start development server
 npm run dev
+
+---
+
+## Car Data in Firebase
+
+Car data is stored in a dedicated Firestore collection called:
+
+- `cars`
+
+Each car document contains fields like:
+
+```json
+{
+  "id": "ford-focus-rs500",
+  "brand": "Ford",
+  "model": "Focus RS500",
+  "year": 2007,
+  "imageKey": "focus-rs-500"
+}
+```
+
+The application reads car data dynamically from Firebase Firestore in pages such as:
+
+- Home
+- Brand pages
+- Import / Export page
+
+---
+
+## Import / Export System
+
+The project includes a dedicated page to manage car data import and export.
+
+### Supported formats
+
+- JSON
+- CSV
+- XML
+
+### Import features
+
+The application allows importing car data files and storing them in Firebase Firestore.
+
+Supported input files:
+
+- `datos.json`
+- `datos.csv`
+- `datos.xml`
+
+When a file is imported, the current cars collection in Firestore is replaced by the imported data.
+
+### Export features
+
+The application allows exporting the current car data stored in Firestore into these formats:
+
+- `datos.json`
+- `datos.csv`
+- `datos.xml`
+
+The exported files are generated dynamically from the current data stored in Firebase.
+
+---
+
+## Example Import Files
+
+The following example files are included in the project and can be used for testing imports:
+
+- [datos.json](./public/examples/datos.json)
+- [datos.csv](./public/examples/datos.csv)
+- [datos.xml](./public/examples/datos.xml)
+
+---
+
+## Firebase Access Centralization
+
+Access to Firebase is centralized inside the `services` folder.
+
+Example structure:
+
+```text
+src/
+  services/
+    firebase/
+      firebase.js
+      cars-service.js
+```
+
+Pages and components do not access Firebase directly.  
+Instead, they use functions from the service layer, such as:
+
+- `getCarsFromFirestore()`
+- `importCarsToFirestore()`
+- `replaceCarsInFirestore()`
+
+This keeps the Firebase logic centralized and organized.
+
+---
+
+## Third-Party Libraries Used for Import / Export
+
+Additional libraries used in this delivery:
+
+- **Papa Parse** for CSV import/export
+- **xml2js** for XML export
+
+For XML import in the browser, the project uses the native `DOMParser` API for compatibility with the frontend environment.
+
+---
+
+## Important Notes
+
+- Car images are resolved in the frontend using `imageKey`
+- Firestore stores only clean car data
+- Importing a file replaces the current `cars` collection
+- Exporting generates files dynamically from Firebase data

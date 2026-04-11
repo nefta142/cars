@@ -11,6 +11,7 @@ import AuthPage from "./pages/auth/AuthPage"
 import ChatPage from "./pages/chat/ChatPage";
 import Rss from "./pages/rss/Rss"
 import Updates from "./pages/updates/Updates"
+import ImportExport from "./pages/import-export/ImportExport"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
@@ -32,6 +33,8 @@ function App() {
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/rss" element={<Rss />} />
           <Route path="/updates" element={<Updates />}/>
+          <Route path="/import" element={<ImportExport />}/>
+          <Route path="/export" element={<ImportExport />}/>
           <Route path="*" element={<Home />}/>
         </Routes>
       </BrowserRouter>

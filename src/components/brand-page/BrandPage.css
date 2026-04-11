@@ -52,3 +52,9 @@
     color:#666;
     font-size:.95rem;
 }
+
+.brand-loading {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}

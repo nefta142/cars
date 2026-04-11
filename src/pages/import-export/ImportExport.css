@@ -1,0 +1,97 @@
+.import-export-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 120px 20px 60px;
+    background: #111;
+    color: white;
+}
+
+.import-export-card {
+    width: 100%;
+    max-width: 900px;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.import-export-card h1 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.import-export-text {
+    text-align: center;
+    color: #cfcfcf;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.import-export-block {
+    margin-bottom: 28px;
+    padding: 20px;
+    border: 1px solid #2d2d2d;
+    border-radius: 12px;
+    background: #151515;
+}
+
+.import-export-block h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.import-export-btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.import-export-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.import-export-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #ffffff;
+    color: #111;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.file-label input {
+    display: none;
+}
+
+.status-message {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #222;
+    border: 1px solid #3a3a3a;
+    color: #f1f1f1;
+    text-align: center;
+}
