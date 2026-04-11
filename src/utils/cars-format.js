@@ -1,5 +1,6 @@
 import Papa from "papaparse";
 import { Builder } from "xml2js";
+import * as XLSX from "xlsx";
 
 export function downloadFile(content, fileName, mimeType) {
     const blob = new Blob([content], { type: mimeType });
@@ -70,5 +71,34 @@ export function xmlToCars(text) {
         model: carNode.getElementsByTagName("model")[0]?.textContent?.trim() || "",
         year: Number(carNode.getElementsByTagName("year")[0]?.textContent?.trim() || 0),
         imageKey: carNode.getElementsByTagName("imageKey")[0]?.textContent?.trim() || "",
+    }));
+}
+
+export function exportCarsToXLSX(cars, fileName = "cars.xlsx") {
+    const worksheet = XLSX.utils.json_to_sheet(cars);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Cars");
+    XLSX.writeFile(workbook, fileName);
+}
+
+export async function xlsxToCars(file) {
+    const buffer = await file.arrayBuffer();
+    const workbook = XLSX.read(buffer);
+    const firstSheetName = workbook.SheetNames[0];
+
+    if (!firstSheetName) {
+        throw new Error("El archivo XLSX no contiene hojas");
+    }
+
+    const worksheet = workbook.Sheets[firstSheetName];
+    const data = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+
+    return data.map((car) => ({
+        id: String(car.id || "").trim(),
+        brand: String(car.brand || "").trim(),
+        model: String(car.model || "").trim(),
+        year: Number(car.year || 0),
+        imageKey: String(car.imageKey || "").trim(),
     }));
 }

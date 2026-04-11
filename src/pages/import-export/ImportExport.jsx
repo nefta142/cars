@@ -15,6 +15,8 @@ import {
     carsToXML,
     xmlToCars,
     downloadFile,
+    exportCarsToXLSX,
+    xlsxToCars,
 } from "../../utils/cars-format";
 import "./ImportExport.css";
 
@@ -92,19 +94,23 @@ function ImportExport() {
             setLoading(true);
             setStatus(`Importando ${file.name}...`);
 
-            const text = await file.text();
             const extension = file.name.split(".").pop().toLowerCase();
 
             let importedCars = [];
 
             if (extension === "json") {
+                const text = await file.text();
                 importedCars = jsonToCars(text);
             } else if (extension === "csv") {
+                const text = await file.text();
                 importedCars = csvToCars(text);
             } else if (extension === "xml") {
-                importedCars = await xmlToCars(text);
+                const text = await file.text();
+                importedCars = xmlToCars(text);
+            } else if (extension === "xlsx") {
+                importedCars = await xlsxToCars(file);
             } else {
-                setStatus("Formato no soportado. Usa JSON, CSV o XML.");
+                setStatus("Formato no soportado. Usa JSON, CSV, XML o XLSX.");
                 return;
             }
 
@@ -115,6 +121,20 @@ function ImportExport() {
             setStatus(`Error al importar el archivo: ${error.message}`);
         } finally {
             event.target.value = "";
+            setLoading(false);
+        }
+    };
+    const handleExportXLSX = async () => {
+        try {
+            setLoading(true);
+            setStatus("Exportando XLSX...");
+            const firestoreCars = await getCarsFromFirestore();
+            exportCarsToXLSX(firestoreCars, "cars.xlsx");
+            setStatus("Archivo XLSX exportado correctamente.");
+        } catch (error) {
+            console.error(error);
+            setStatus(`Error al exportar XLSX: ${error.message}`);
+        } finally {
             setLoading(false);
         }
     };
@@ -149,7 +169,7 @@ function ImportExport() {
                             Seleccionar archivo
                             <input
                                 type="file"
-                                accept=".json,.csv,.xml"
+                                accept=".json,.csv,.xml,.xlsx"
                                 onChange={handleImportFile}
                                 disabled={loading}
                             />
@@ -181,6 +201,13 @@ function ImportExport() {
                                 disabled={loading}
                             >
                                 Exportar XML
+                            </button>
+                            <button
+                                className="import-export-btn"
+                                onClick={handleExportXLSX}
+                                disabled={loading}
+                            >
+                                Exportar XLSX
                             </button>
                         </div>
                     </div>
