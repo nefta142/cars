@@ -198,9 +198,9 @@ The exported files are generated dynamically from the current data stored in Fir
 
 The following example files are included in the project and can be used for testing imports:
 
-- [datos.json](./public/examples/datos.json)
-- [datos.csv](./public/examples/datos.csv)
-- [datos.xml](./public/examples/datos.xml)
+- [datos.json](./public/examples/datos-marcas.json)
+- [datos.csv](./public/examples/datos-marcas.csv)
+- [datos.xml](./public/examples/datos-marcas.xml)
 
 ---
 
