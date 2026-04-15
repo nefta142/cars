@@ -194,6 +194,24 @@ The exported files are generated dynamically from the current data stored in Fir
 
 ---
 
+## Example Files Folder
+
+The project includes example import files inside the `public/examples` folder.
+
+This folder contains sample files in the supported formats so the import system can be tested easily.
+
+Example files included:
+
+- `datos.json`
+- `datos.csv`
+- `datos.xml`
+- `datos-marcas.xlsx`
+- `datos-marcas.ods`
+
+These files can be used directly from the application to test the import functionality with valid car data.
+
+---
+
 ## Example Import Files
 
 The following example files are included in the project and can be used for testing imports:
